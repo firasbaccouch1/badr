@@ -413,7 +413,10 @@
             "&msg=" + msg;
           $.ajax({
             type: "POST",
-            url: "assets/php/mail.php",
+            headers:{
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: "/ContantUs",
             data: values,
             success: function () {
               $('#name').val('');
@@ -426,6 +429,12 @@
               setTimeout(function () {
                 $('#st-alert').fadeOut('slow');
               }, 4000);
+            },
+            error: function(error){
+                $('#st-alert').fadeIn().html('<div class="alert alert-danger"><strong>Error!</strong> Something went wrong please try again later.</div>');
+                setTimeout(function () {
+                  $('#st-alert').fadeOut('slow');
+                }, 4000);
             }
           });
         } else {
@@ -473,7 +482,10 @@
             "&umsg=" + umsg;
           $.ajax({
             type: "POST",
-            url: "assets/php/appointment.php",
+            url: "/Appointment",
+            headers:{
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
             data: values,
             success: function () {
               $('#uname').val('');
@@ -487,6 +499,12 @@
               setTimeout(function () {
                 $('#st-alert1').fadeOut('slow');
               }, 4000);
+            },
+            error: function(error){
+                $('#st-alert').fadeIn().html('<div class="alert alert-danger"><strong>Error!</strong> Something went wrong please try again later.</div>');
+                setTimeout(function () {
+                  $('#st-alert').fadeOut('slow');
+                }, 4000);
             }
           });
         } else {

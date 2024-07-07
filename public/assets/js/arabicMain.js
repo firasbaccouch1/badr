@@ -1,7 +1,7 @@
 (function ($) {
 
     "use strict";
-  
+
     /*
     |--------------------------------------------------------------------------
     | Template Name: Nischinto
@@ -35,21 +35,21 @@
     | 20. Before After Slider
     |
     */
-  
+
     /*--------------------------------------------------------------
       Scripts initialization
     --------------------------------------------------------------*/
     $.exists = function (selector) {
       return $(selector).length > 0;
     };
-  
+
     $(window).on("load", function () {
       $(window).trigger("scroll");
       $(window).trigger("resize");
       preloaderSetup();
       isotopInit();
     });
-  
+
     $(document).on("ready", function () {
       $(window).trigger("resize");
       dynamicBackground();
@@ -86,19 +86,19 @@
           },
         });
       }
-  
+
     });
-  
+
     $(window).on("resize", function () {
       isotopInit();
       stickyFooter();
       beforeAfterSlider();
     });
-  
+
     $(window).on("scroll", function () {
       stickyHeader();
     });
-  
+
     /*--------------------------------------------------------------
       1. Placeholder
     --------------------------------------------------------------*/
@@ -106,7 +106,7 @@
       $(".st-perloader").fadeOut();
       $("st-perloader-in").delay(150).fadeOut("slow");
     }
-  
+
     /*--------------------------------------------------------------
       2. Dynamic Background
     --------------------------------------------------------------*/
@@ -119,7 +119,7 @@
         });
       });
     }
-  
+
     /*--------------------------------------------------------------
       3. Mobile Menu
     --------------------------------------------------------------*/
@@ -139,7 +139,7 @@
       // Sidebar Header
       $('.st-site-header.st-style2').parents('body').addClass('st-get-sidebar');
     }
-  
+
     /*--------------------------------------------------------------
       4. Sticky Header
     --------------------------------------------------------------*/
@@ -151,7 +151,7 @@
         $('.st-sticky-header').removeClass('st-sticky-active');
       }
     }
-  
+
     /*--------------------------------------------------------------
       5. One Page Navigation
     --------------------------------------------------------------*/
@@ -168,17 +168,17 @@
         }
         return false;
       });
-  
+
       // One Page Active Class
       var topLimit = 300,
         ultimateOffset = 200;
-  
+
       $('.st-onepage-nav').each(function () {
         var $this = $(this),
           $parent = $this.parent(),
           current = null,
           $findLinks = $this.find("a");
-  
+
         function getHeader(top) {
           var last = $findLinks.first();
           if (top < topLimit) {
@@ -187,7 +187,7 @@
           for (var i = 0; i < $findLinks.length; i++) {
             var $link = $findLinks.eq(i),
               href = $link.attr("href");
-  
+
             if (href.charAt(0) === "#" && href.length > 1) {
               var $anchor = $(href).first();
               if ($anchor.length > 0) {
@@ -201,15 +201,15 @@
           }
           return last;
         }
-  
+
         $(window).on("scroll", function () {
           var top = window.scrollY,
             height = $this.outerHeight(),
             max_bottom = $parent.offset().top + $parent.outerHeight(),
             bottom = top + height + ultimateOffset;
-  
+
           var $current = getHeader(top);
-  
+
           if (current !== $current) {
             $this.find(".active").removeClass("active");
             $current.addClass("active");
@@ -218,7 +218,7 @@
         });
       });
     }
-  
+
     /*--------------------------------------------------------------
       6. Isotop Initialize
     --------------------------------------------------------------*/
@@ -247,7 +247,7 @@
         });
       }
     }
-  
+
     /*--------------------------------------------------------------
       7. Back To Top
     --------------------------------------------------------------*/
@@ -259,7 +259,7 @@
         }, 1000);
       });
     }
-  
+
     /*--------------------------------------------------------------
       8. Footer Sticky
     --------------------------------------------------------------*/
@@ -270,7 +270,7 @@
       var footerHeightPx = footerHeight + 'px';
       $('.st-content').css("margin-bottom", footerHeightPx);
     }
-  
+
     /*--------------------------------------------------------------
       9. Slick Slider
     --------------------------------------------------------------*/
@@ -280,7 +280,7 @@
         var $ts = $(this).find('.slick-container');
         var $slickActive = $(this).find('.slick-wrapper');
         var $sliderNumber = $(this).siblings('.slider-number');
-  
+
         // Auto Play
         var autoPlayVar = parseInt($ts.attr('data-autoplay'), 10);
         // Auto Play Time Out
@@ -312,7 +312,7 @@
         // Fade Slider
         var fadeVar = parseInt($($ts).attr('data-fade-slide'));
         (fadeVar === 1) ? (fadeVar = true) : (fadeVar = false);
-  
+
         // Slick Active Code
         $slickActive.slick({
           infinite: true,
@@ -356,7 +356,7 @@
         });
       })
     }
-  
+
     /*--------------------------------------------------------------
       10. Progress Bar
     --------------------------------------------------------------*/
@@ -366,7 +366,7 @@
         $(this).find('.st-progressbar-in').css('width', progressPercentage);
       });
     }
-  
+
     /*--------------------------------------------------------------
       11. Pricing Table
     --------------------------------------------------------------*/
@@ -379,7 +379,7 @@
         function () { $('.st-pricing-table.st-style1').removeClass('st-active') }
       )
     }
-  
+
     /*--------------------------------------------------------------
       12. Ajax Contact Form And Appointment
     --------------------------------------------------------------*/
@@ -394,18 +394,18 @@
           var email = $('#email').val();
           var msg = $('#msg').val();
           var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  
+
           if (!regex.test(email)) {
             $('#st-alert').fadeIn().html('<div class="alert alert-danger"><strong>Warning!</strong> Please Enter Valid Email.</div>');
             return false;
           }
-  
+
           name = $.trim(name);
           subject = $.trim(subject);
           phone = $.trim(phone);
           email = $.trim(email);
           msg = $.trim(msg);
-  
+
           if (name != '' && email != '' && msg != '') {
             var values = "name=" + name +
               "&subject=" + subject +
@@ -414,7 +414,10 @@
               "&msg=" + msg;
             $.ajax({
               type: "POST",
-              url: "assets/php/mail.php",
+              headers:{
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+              url: "/ContantUs",
               data: values,
               success: function () {
                 $('#name').val('');
@@ -422,11 +425,17 @@
                 $('#phone').val('');
                 $('#email').val('');
                 $('#msg').val('');
-  
+
                 $('#st-alert').fadeIn().html('<div class="alert alert-success"><strong>Success!</strong> Email has been sent successfully.</div>');
                 setTimeout(function () {
                   $('#st-alert').fadeOut('slow');
                 }, 4000);
+              },
+              error: function(error){
+                  $('#st-alert').fadeIn().html('<div class="alert alert-danger"><strong>Error!</strong> Something went wrong please try again later.</div>');
+                  setTimeout(function () {
+                    $('#st-alert').fadeOut('slow');
+                  }, 4000);
               }
             });
           } else {
@@ -436,7 +445,7 @@
         });
       }
     }
-  
+
     // Appointment Form
     function appointmentForm() {
       if ($.exists('#appointment-form #appointment-submit')) {
@@ -450,12 +459,12 @@
           var udoctor = $('#udoctor').val();
           var umsg = $('#umsg').val();
           var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  
+
           if (!regex.test(uemail)) {
             $('#st-alert1').fadeIn().html('<div class="alert alert-danger"><strong>Warning!</strong> Please Enter Valid Email.</div>');
             return false;
           }
-  
+
           uname = $.trim(uname);
           uemail = $.trim(uemail);
           unumber = $.trim(unumber);
@@ -463,7 +472,7 @@
           udepartment = $.trim(udepartment);
           udoctor = $.trim(udoctor);
           umsg = $.trim(umsg);
-  
+
           if (uname != '' && uemail != '' && umsg != '') {
             var values = "uname=" + uname +
               "&uemail=" + uemail +
@@ -474,7 +483,10 @@
               "&umsg=" + umsg;
             $.ajax({
               type: "POST",
-              url: "assets/php/appointment.php",
+              url: "/Appointment",
+              headers:{
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
               data: values,
               success: function () {
                 $('#uname').val('');
@@ -483,11 +495,17 @@
                 $('#udepartment').val('');
                 $('#udoctor').val('');
                 $('#umsg').val('');
-  
+
                 $('#st-alert1').fadeIn().html('<div class="alert alert-success"><strong>Success!</strong> Appointment has been sent successfully.</div>');
                 setTimeout(function () {
                   $('#st-alert1').fadeOut('slow');
                 }, 4000);
+              },
+              error: function(error){
+                  $('#st-alert').fadeIn().html('<div class="alert alert-danger"><strong>Error!</strong> Something went wrong please try again later.</div>');
+                  setTimeout(function () {
+                    $('#st-alert').fadeOut('slow');
+                  }, 4000);
               }
             });
           } else {
@@ -497,7 +515,7 @@
         });
       }
     }
-  
+
     /*--------------------------------------------------------------
       13. Mailchimp start
     --------------------------------------------------------------*/
@@ -509,12 +527,12 @@
             callback: mailchimpCallback
           });
         }
-  
+
         function mailchimpCallback(resp) {
           if (resp.result === 'success') {
             $('.subscription-success').html('<i class="fa fa-check"></i><br/>' + resp.msg).fadeIn(1000);
             $('.subscription-error').fadeOut(500);
-  
+
           } else if (resp.result === 'error') {
             $('.subscription-error').html('<i class="fa fa-times"></i><br/>' + resp.msg).fadeIn(1000);
           }
@@ -530,7 +548,7 @@
         };
       }
     }
-  
+
     /*--------------------------------------------------------------
       14. Modal Video
     --------------------------------------------------------------*/
@@ -540,7 +558,7 @@
         var video = $(this).attr('href');
         $('.st-video-popup-container iframe').attr('src', video);
         $('.st-video-popup').addClass('active');
-  
+
       });
       $('.st-video-popup-close, .st-video-popup-layer').on('click', function (e) {
         $('.st-video-popup').removeClass('active');
@@ -549,7 +567,7 @@
         e.preventDefault();
       });
     }
-  
+
     /*--------------------------------------------------------------
       15. Light Gallery
     --------------------------------------------------------------*/
@@ -563,7 +581,7 @@
         });
       });
     }
-  
+
     /*--------------------------------------------------------------
       16. Tamjid Counter
     --------------------------------------------------------------*/
@@ -572,7 +590,7 @@
         duration: 700
       });
     }
-  
+
     /*--------------------------------------------------------------
       17. Ripple
     --------------------------------------------------------------*/
@@ -587,7 +605,7 @@
         });
       }
     }
-  
+
     /*--------------------------------------------------------------
       18. Tabs
     --------------------------------------------------------------*/
@@ -599,8 +617,8 @@
         e.preventDefault();
       });
     }
-  
-  
+
+
     /*--------------------------------------------------------------
       19. Accordian
     --------------------------------------------------------------*/
@@ -616,7 +634,7 @@
         $(this).parent('.st-accordian').siblings().removeClass('active');
       });
     }
-  
+
     /*--------------------------------------------------------------
       20. Before After Slider
     --------------------------------------------------------------*/
@@ -628,11 +646,11 @@
             $before = $container.find('.st-before'),
             $after = $container.find('.st-after'),
             $handle = $container.find('.st-handle-before-after');
-  
+
           var maxX = $container.outerWidth(),
             offsetX = $container.offset().left,
             startX = 0;
-  
+
           var touchstart, touchmove, touchend;
           var mousemove = function (e) {
             e.preventDefault();
@@ -669,7 +687,7 @@
               $(document).on('mouseup', mouseup);
             }
           };
-  
+
           touchstart = function (e) {
             console.log(e);
             mousedown({ preventDefault: e.preventDefault, clientX: e.originalEvent.changedTouches[0].pageX });
@@ -688,6 +706,6 @@
         });
       }
     }
-  
-  
+
+
   })(jQuery); // End of use strict

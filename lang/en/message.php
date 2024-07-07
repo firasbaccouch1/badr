@@ -4,7 +4,7 @@ return  [
     //Header
     'all' => 'All',
     'home' => 'Home',
-    'about' => 'About',
+    'about' => 'About Us',
     'department' => 'Department',
     'doctors' => 'Doctors',
     'gallery' => 'Gallery',
@@ -12,8 +12,8 @@ return  [
     'contact' => 'Contact',
     'appointment' => 'Appointment',
     'make_an_appointment' => 'Make an appointment',
-    
-    
+    'welcome_to_our' => 'Welcome to our',
+    'useful_links' => 'Useful Links',
     //departmemt text
     'departmemt_title' => 'Our department',
     'departmemt_text' => 'Explore our departments and experience unparalleled excellence in beauty care at Tiraz Clinic',
@@ -56,6 +56,11 @@ return  [
         'eyebrow_transplant' => 'Eyebrow Transplant',
         'hair_transplant_for_men' => 'Hair Transplant for men',
         'hair_transplantation_for_women' =>  'Hair transplantation for women',
+
+        'beard_and_mustache_transplantation_department' => 'Beard and Mustache',
+        'eyebrow_transplant_department' => 'Eyebrow',
+        'hair_transplant_for_men_department' => 'For men',
+        'hair_transplantation_for_women_department' =>  'For women',
 
 
 
@@ -118,7 +123,7 @@ return  [
     'gallery_title' => 'View our gallery',
     'gallery_desc' => 'Explore Our Gallery for a Glimpse into Tiraz Clinic\'s Work.',
 
-    'before_title' => 'Before and after procedures', 
+    'before_title' => 'Before and after procedures',
     'before_desc' => 'Explore Our Gallery for Stunning Results at Tiraz Clinic.',
 
 
@@ -137,7 +142,7 @@ return  [
 
     //stay connect
     'contact_us_title' => 'Stay connect with us',
-    'contact_us_desc' => 'Stay Connected with Tiraz Clinic for Updates and Offers!',
+    'contact_us_desc' => 'We\'re here to help! Fill out the form below, and our team will get back to you as soon as possible. Your inquiries and feedback are important to us.',
     'subject' => 'Subject',
     'send_message' => 'Send message',
 
@@ -158,7 +163,7 @@ return  [
     Transplantation of hair follicles in the upper lip area of people who have no or no dense hair on the upper lip is called mustache transplant therapy.<br> This act is performed using the FUE method.<br> In this method, local anesthesia is used and a 2-3 hour microsurgery is performed.<br> With FUE, hair follicles can be transplanted into the dermis indefinitely.<br> The person requesting the transplant
     makes the decision on the number of hair follicles and the donor area.<br> Hair follicles are placed in this area of the person using tools that can transplant up to 0.<br>7 mm.<br> After the first graft, approximately after 4 months, a new graft is possible in case of sparse areas.<br> As this graft is relatively difficult and requires skill, the graft must be performed by
     expert specialists in this field.<br> Otherwise, the transplant will give negative results.<br>
-    
+
     The process before the mustache transplant?
     If you decide to have your mustache transplanted during the appointment with your specialist, a beard plan will be drawn up.<br> During this planning, it is decided how many follicles will be transplanted, in which area the transplantation will be performed and which technique will be used.<br> In order for the transplanted follicles to be nourished in a healthy and easy way, do not transplant more than necessary.<br> Therefore, take into account the recommendations of your medical specialist.<br> The other thing to consider is the hair transplant technique.<br> For some years, the method without risk of leaving marks and with very little damage is the FUE method and this technique is widely used.<br>
     ',
@@ -173,17 +178,17 @@ return  [
 
     how is the intervention carried out?
     Rest assured, the eyebrow transplant is not a major operation.<br> This procedure only takes one day.<br> The transplant can last from 1h30 to 3h on average.<br> However, a complete eyebrow reconstruction can take up to 5 hours.<br> The operation is performed under local anesthesia.<br> You can then go home and even return to work the next day.<br>
-    
+
     Before the intervention
     Consultation with an expert required.<br> The point is to make a diagnosis and see what can be done (particularly depending on eyebrow thickness and size) – and whether or not this procedure is really right for you.<br>
-    
-    
+
+
     The day of the procedure
     A beautician comes to draw the shape of your eyebrows according to your wishes and according to the plan established with the doctor.<br> The transplant can then begin.<br> To do this, a shaving line is drawn under the hair at the back of the head, the specialist tells us.<br> Why in this place? Because it is imperceptible and hair growth is continuous.<br>
-    
+
     When can the results be observed after a transplant?
     The results are visible from the first weeks after the eyebrow transplant.<br> You should know that your implanted hair will fall out within the first three months! Don’t worry, this is perfectly normal.<br> This allows new hair to start growing.<br> “You will see day by day that the line of your eyebrows will take shape and that the sparse areas will fade”, adds the expert.<br> The care of your eyebrows can begin.<br>
-    
+
     ',
     'eyebrow_transplant_desc2' => 'Remember that you can only assess the optimal results of the procedure one year after the transplant.',
 
@@ -193,47 +198,47 @@ return  [
     'hair_transplant_for_men_desc1' => 'Men over 50 experience varying degrees of hair loss until the age of 50.<br> For some generations, hair loss can start as early as their twenties.<br> The main cause of most cases of hair loss in men is related to androgenic alopecia; On the other hand, hair loss caused by genetic factors, the short life of male hormones causes a kind of deflation in the hair follicles causes abnormal hair.<br> Other causes of hair loss are thyroid problems, improper use of medications and the few that vary among others.<br>
 
     2- Hair transplant with the FUE method<br>
-    
+
     We are proud of the experience of hair transplantation without scars and without side effects.<br> This FUE hair transplant technique is a common method; Specialists begin by removing hair follicles from the nape of the neck (hairline donor area) without leaving any abnormal appearance in the donor area.<br> During a hair transplant, approximately 4,000 to 4,500 hair follicles are implanted using a new FUE technique that gives a natural look and stops causes of hair loss.<br> What is the FUE technique? For 30 years, a step towards professionalism has been taken every day in the field of hair transplantation.<br> The FUE hair transplantation technique is the technique that has enabled the rapid popularity of hair transplantation in the world.<br> FUE (Follicular Unit Extraction) entered the literature in 2002, it offered a very important advantage in by offering the possibility of a hair transplant without incisions, without stitches and without traces.<br> Therefore, traceless and natural hair transplantation has become a globally chosen solution for hair loss.<br>
-    
+
     A-Collection of hair follicles with the FUE method<br>
-    
+
     The FUE hair transplant (Follicular Unit Extraction) is a method used since 2002 and whose principle is to extract one by one the hair follicles of the neck without making a linear incision.<br> When the graft harvesting operation is performed, small incisions are made around the follicular unit using circular microchips, the hair follicles are harvested one by one in the Invovo style and transplanted into the balding area.<br>
-    
+
     B-Canal incision with the FUE Method<br>
-    
+
     After the graft harvesting is completed, the hair follicle harvesting area is bandaged to avoid any problems.<br> After this operation, the patient lies on his back.<br> During the incision of the FUE hair transplant channel, the recipient area is numbed with local anesthesia.<br> Then the canal incision operation is performed.<br> The incision is made using an advanced tool called a micropen.<br> These channels are opened depending on the size of the hair follicle.<br> The removed hair follicles are placed in these channels.<br> The direction of the channels, the depth and the width must be in harmony with the hair follicles.<br>
-    
+
     C-Placement of hair follicles with FUE Hair Transplantation<br>
-    
+
     The last step of Fue Hair Transplant is the placement of hair follicles in the incisions.<br> Immediately after the removal process, the hair follicles placed in special boxes are regularly removed individually and inserted into the open incisions.<br>
-    
+
     3- Postoperative measures of a hair implant transplant<br>
-    
+
     This hair surgery is minimally invasive and the patient can resume their daily activities very quickly.<br> However, it would be advisable to take some precautions to avoid the risk of postoperative complications of hair transplantation.<br>
-    
+
     After leaving the clinic, the surgeon prescribes painkillers to relieve the feeling of tension in the top and back of the head.<br> To avoid infection and inflammation, the patient is instructed to take antibiotics and anti-inflammatories for the week following the transplant.<br>
-    
+
     Finally, it is recommended to wash the hair with a mild shampoo two days after the transplant and to avoid violent massages.<br> When can you see the final result of a hair transplant? Grafts begin to regrow on average 70 days after transplantation.<br> And if you take into account that the speed of hair growth is one centimeter per month, then after 10 months (on average) the grafts will have an optimal size.<br>
     ',
     'hair_transplant_for_men_desc2' => '4- What are the different methods that exist for CAPILARY transplantation?<br>
 
     A-FUT hair transplant<br>
-    
+
     The FUT method of hair transplantation (Follicular Unit Transplantation) or technique known as “striping” consists of cutting a strip of scalp in an area of permanent hair on the patient.<br> Then this strip is divided into several follicular units which are reimplanted in the bald part of the patient’s head in holes previously dug by incisions to receive these grafts.<br>
-    
+
     B-FUE hair transplant<br>
-    
+
     Another extraction method is the FUE follicular unit extraction technique.<br> Instead of harvesting an entire strip of scalp, this time hair follicles are harvested one by one from the patient’s donor hair.<br> On the other hand, the implantation of these follicular units is identical, making incisions in the recipient part to implant the grafts like the FUTs.<br>
-    
+
     C-IFA hair transplant<br>
-    
+
     The IFA method of automated follicle implantation differs from FUT and FUE in that the hair follicles are removed mechanically.<br> The mechanical gesture of extracting the follicular units from the patient’s skull is performed by a Safer, Neograft or Artas robot.<br> The grafts are then implanted invasively in incisions identical to FUT and FUE in the hairless area.<br>
-    
+
     D-DHI hair transplant<br>
-    
+
     The DHI method of hair implants is an advanced and non-invasive form of FUE, i.<br> H the extraction of hair follicles one by one.<br> However, the DHI technique differs from all the others in that the entire hair transplant process is carried out manually by an experienced doctor, from the extraction of each follicle to the implantation of each of these grafts.<br>
-    
+
     This method is performed manually with a high-precision DHI capillary injector and allows the doctor to control step by step the depth, angle and direction of implantation of each hair follicle.<br> Therefore, this hair transplant technique is performed without incisions on the donor and recipient side, leaving no scars and producing a completely natural and dense result.<br>
        ',
 
@@ -242,7 +247,7 @@ return  [
     'hair_transplantation_for_women_desc1' => 'To counter the phenomenon of female androgenetic alopecia, hair transplantation is a procedure that is increasingly practiced.<br> With this technique you can find thick and natural hair thanks to a non-invasive and painless method.<br> However, it is important to ask the right questions before undertaking such surgery.<br>
     In hair transplantation for women, the reasons for hair loss are different from those for men.<br> It can be an inadequate diet, certain diseases such as alopecia or certain hormonal disorders.<br> Therefore, in order to ensure the treatment of the causes of hair loss before hair transplantation, it is very important to carry out a general medical examination.<br>
     <br>
-    
+
     Hair transplant in women
     <br>
     Hair loss is often associated with men and affects a large number of women as well.<br> However, thinning does not occur in the same way and develops in 3 different stages according to the Ludwig Scale.<br> Thus, women can also perform a hair transplant using the FUE method and the same techniques as the procedure on a man.<br>
@@ -769,5 +774,5 @@ return  [
     If you\'re considering a tummy tuck at Tiraz Clinic, we invite you to schedule a consultation with our plastic surgeons.<br> During this visit, we\'ll discuss your goals, assess your candidacy for the procedure, and develop a customized treatment plan to help you achieve the firmer, more toned abdomen you desire.<br>
     ',
 
-    
+        'footer_desc' => 'Our vision is to develop personalized care plans, focusing on chronic disease management. We are dedicated to becoming the region\'s foremost healthcare network'
 ];
